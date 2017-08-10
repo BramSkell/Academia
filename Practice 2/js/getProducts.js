@@ -7,7 +7,7 @@ $(document).ready(function () {
             
             $.each(data, function (key, obj) {
                 //console.log(obj.image+" "+obj.title+" "+obj.description);
-                content+= '<figure class="productIMG"><a href="details.html"><img src=\"'+obj.image+'\"></a>';
+                content+= '<figure class="productIMG"><a href="details.html?='+obj.id+'"><img src=\"'+obj.image+'\"></a>';
                 content+= '<figcaption>'+obj.title+'</figcaption><br/><p>'+obj.description+'</p></figure>';
                 //console.log(content);
             });

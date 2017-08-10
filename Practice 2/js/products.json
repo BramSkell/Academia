@@ -3,36 +3,48 @@
         "id": 0,
         "image": "img/download%20(1).jpg",
         "title": "Sports watch, water resist.",
-        "description": "Lorem ipsum dolor sit amet, consectetur"
+        "description": "Lorem ipsum dolor sit amet, consectetur",
+        "model": "00011",
+        "price": "12,000"
     },
     "Product2": {
         "id": 1,
         "image": "img/download.jpg",
         "title": "Sports watch, water resist.",
-        "description": "Lorem ipsum dolor sit amet, consectetur"
+        "description": "Lorem ipsum dolor sit amet, consectetur",
+        "model": "00012",
+        "price": "12,000"
     },
     "Product3": {
         "id": 2,
         "image": "img/images%20(1).jpg",
         "title": "Sports watch, water resist.",
-        "description": "Lorem ipsum dolor sit amet, consectetur"
+        "description": "Lorem ipsum dolor sit amet, consectetur",
+        "model": "00013",
+        "price": "12,000"
     },
     "Product4": {
         "id": 3,
         "image": "img/images%20(2).jpg",
         "title": "Sports watch, water resist.",
-        "description": "Lorem ipsum dolor sit amet, consectetur"
+        "description": "Lorem ipsum dolor sit amet, consectetur",
+        "model": "00014",
+        "price": "12,000"
     },
     "Product5": {
         "id": 4,
         "image": "img/images%20(3).jpg",
         "title": "Sports watch, water resist.",
-        "description": "Lorem ipsum dolor sit amet, consectetur"
+        "description": "Lorem ipsum dolor sit amet, consectetur",
+        "model": "00015",
+        "price": "12,000"
     },
     "Product6": {
         "id": 5,
         "image": "img/images.jpg",
         "title": "Sports watch, water resist.",
-        "description": "Lorem ipsum dolor sit amet, consectetur"
+        "description": "Lorem ipsum dolor sit amet, consectetur",
+        "model": "00016",
+        "price": "12,000"
     }
 }
