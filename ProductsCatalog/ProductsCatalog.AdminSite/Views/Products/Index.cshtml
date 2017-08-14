@@ -32,6 +32,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Category.Category1)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDateTime)
+        </th>
         <th></th>
     </tr>
 
@@ -59,7 +65,13 @@
             @Html.DisplayFor(modelItem => item.Category.Category1)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.DisplayFor(modelItem => item.CreateDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID}) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>

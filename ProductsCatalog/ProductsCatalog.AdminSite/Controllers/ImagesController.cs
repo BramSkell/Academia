@@ -52,6 +52,8 @@ namespace ProductsCatalog.AdminSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                image.CreateDateTime = DateTime.Now;
+                image.UpdateDateTime = DateTime.Now;
                 db.Images.Add(image);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,10 +84,11 @@ namespace ProductsCatalog.AdminSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,ImgDescription,ImageURL,Active,ProductID")] Image image)
+        public ActionResult Edit([Bind(Include = "ID,ImgDescription,ImageURL,Active,ProductID,CreateDateTime")] Image image)
         {
             if (ModelState.IsValid)
             {
+                image.UpdateDateTime = DateTime.Now;
                 db.Entry(image).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProductsCatalogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProductsCatalogModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="ID" />
@@ -13,6 +13,8 @@
           <Property Name="Category" Type="nvarchar" MaxLength="50" />
           <Property Name="CatDescription" Type="nvarchar" MaxLength="250" />
           <Property Name="Active" Type="bit" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="UpdateDateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="Images">
           <Key>
@@ -23,6 +25,8 @@
           <Property Name="ImageURL" Type="nvarchar" MaxLength="100" />
           <Property Name="Active" Type="bit" />
           <Property Name="ProductID" Type="int" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="UpdateDateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -36,6 +40,8 @@
           <Property Name="Keyword" Type="nvarchar" MaxLength="20" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Active" Type="bit" />
+          <Property Name="CreateDateTime" Type="datetime" />
+          <Property Name="UpdateDateTime" Type="datetime" />
         </EntityType>
         <Association Name="FK_CategoryProduct">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
@@ -74,8 +80,7 @@
             <End Role="Images" EntitySet="Images" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProductsCatalogModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -88,6 +93,8 @@
           <Property Name="CatDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
           <NavigationProperty Name="Products" Relationship="Self.FK_CategoryProduct" FromRole="Category" ToRole="Product" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Image">
           <Key>
@@ -99,6 +106,8 @@
           <Property Name="Active" Type="Boolean" />
           <Property Name="ProductID" Type="Int32" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ImagesProduct" FromRole="Images" ToRole="Product" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -114,6 +123,8 @@
           <Property Name="Active" Type="Boolean" />
           <NavigationProperty Name="Category" Relationship="Self.FK_CategoryProduct" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="Images" Relationship="Self.FK_ImagesProduct" FromRole="Product" ToRole="Images" />
+          <Property Name="CreateDateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDateTime" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_CategoryProduct">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
@@ -161,6 +172,8 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="ProductsCatalogModel.Category">
               <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Category1" ColumnName="Category" />
                 <ScalarProperty Name="CatDescription" ColumnName="CatDescription" />
@@ -171,6 +184,8 @@
           <EntitySetMapping Name="Images">
             <EntityTypeMapping TypeName="ProductsCatalogModel.Image">
               <MappingFragment StoreEntitySet="Images">
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ImgDescription" ColumnName="ImgDescription" />
                 <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
@@ -182,6 +197,8 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="ProductsCatalogModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ProdDescripion" ColumnName="ProdDescripion" />

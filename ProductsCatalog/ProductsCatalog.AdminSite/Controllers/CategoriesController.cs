@@ -48,8 +48,11 @@ namespace ProductsCatalog.AdminSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Category1,CatDescription,Active")] Category category)
         {
+            category.CreateDateTime = DateTime.Now;
+            category.UpdateDateTime = DateTime.Now;
             if (ModelState.IsValid)
             {
+                
                 db.Categories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,10 +81,11 @@ namespace ProductsCatalog.AdminSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Category1,CatDescription,Active")] Category category)
+        public ActionResult Edit([Bind(Include = "ID,Category1,CatDescription,Active,CreateDateTime")] Category category)
         {
             if (ModelState.IsValid)
             {
+                category.UpdateDateTime = DateTime.Now;
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

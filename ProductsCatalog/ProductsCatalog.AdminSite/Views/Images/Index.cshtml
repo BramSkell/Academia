@@ -23,6 +23,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Product.Name)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdateDateTime)
+        </th>
         <th></th>
     </tr>
 
@@ -39,6 +45,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Product.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdateDateTime)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
