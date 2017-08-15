@@ -1,0 +1,56 @@
+{
+  "pDetail1": {
+    "id": 0,
+    "image": "img/download%20(1).jpg",
+    "title": "Sports watch, water resist.",
+    "model": "00011",
+    "price": "11,000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quaerat, sit quod nostrum natus odio placeat quisquam debitis libero impedit. Earum quisquam reiciendis ratione, minus tempore voluptatum alias deserunt necessitatibus.",
+    "minImg": [ "img/download%20(1).jpg", "img/download%20(1).jpg", "img/download%20(1).jpg" ]
+  },
+  "pDetail2": {
+    "id": 1,
+    "image": "img/download.jpg",
+    "title": "Sports watch, water resist.",
+    "model": "00012",
+    "price": "12,000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quaerat, sit quod nostrum natus odio placeat quisquam debitis libero impedit. Earum quisquam reiciendis ratione, minus tempore voluptatum alias deserunt necessitatibus.",
+    "minImg": [ "img/download.jpg", "img/download.jpg", "img/download.jpg" ]
+  },
+  "pDetail3": {
+    "id": 2,
+    "image": "img/images%20(1).jpg",
+    "title": "Sports watch, water resist.",
+    "model": "00013",
+    "price": "13,000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quaerat, sit quod nostrum natus odio placeat quisquam debitis libero impedit. Earum quisquam reiciendis ratione, minus tempore voluptatum alias deserunt necessitatibus.",
+    "minImg": [ "img/images%20(1).jpg", "img/images%20(1).jpg", "img/images%20(1).jpg" ]
+  },
+  "pDetail4": {
+    "id": 3,
+    "image": "img/images%20(2).jpg",
+    "title": "Sports watch, water resist.",
+    "model": "00014",
+    "price": "14,000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quaerat, sit quod nostrum natus odio placeat quisquam debitis libero impedit. Earum quisquam reiciendis ratione, minus tempore voluptatum alias deserunt necessitatibus.",
+    "minImg": [ "img/images%20(2).jpg", "img/images%20(2).jpg", "img/images%20(2).jpg" ]
+  },
+  "pDetail5": {
+    "id": 4,
+    "image": "img/images%20(3).jpg",
+    "title": "Sports watch, water resist.",
+    "model": "00015",
+    "price": "15,000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quaerat, sit quod nostrum natus odio placeat quisquam debitis libero impedit. Earum quisquam reiciendis ratione, minus tempore voluptatum alias deserunt necessitatibus.",
+    "minImg": [ "img/images%20(3).jpg", "img/images%20(3).jpg", "img/images%20(3).jpg" ]
+  },
+  "pDetail6": {
+    "id": 5,
+    "image": "img/images.jpg",
+    "title": "Sports watch, water resist.",
+    "model": "00016",
+    "price": "16,000",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quaerat, sit quod nostrum natus odio placeat quisquam debitis libero impedit. Earum quisquam reiciendis ratione, minus tempore voluptatum alias deserunt necessitatibus.",
+    "minImg": [ "img/images.jpg", "img/images.jpg", "img/images.jpg" ]
+  }
+}

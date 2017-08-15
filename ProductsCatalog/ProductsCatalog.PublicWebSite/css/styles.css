@@ -33,7 +33,7 @@ a{
 }
 .mainContent{
     padding: 5px;
-    height: 600px;  
+    height: 700px;  
     border: 2px solid gray;
     border-radius: 5px;
 }
@@ -122,4 +122,20 @@ tr:nth-child(even) {
 }
 th{
     background-color: gray;
+}
+.thumb{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.similar{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+}
+
+.detaIMG{
+     width: 200px;
+    height: 200px;
 }
