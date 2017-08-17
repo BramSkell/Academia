@@ -1,10 +1,19 @@
 $(document).ready(function () {
-    (function getID() {
+    (function () {
+        for (var i = 0; i < localStorage.length; i++) {
+            console.log(localStorage);
+        }
+        
+    })();
+
+    (function () {
         var id = location.search.substr(1);        
         id.split("&").forEach(function (part) {
             var item = part.split("=");
             ShowDetails(item[1]);
+            
         });
+        
     })();
 
     function ShowDetails(item) {
@@ -41,5 +50,6 @@ $(document).ready(function () {
         });
         $("#details").append(deta);
         $("#description").append(desc);
+        
     }
 });

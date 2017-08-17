@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.Http;
 using System.Data.Entity;
 using ProductsCatalog.WebApi.Models;
@@ -16,10 +17,13 @@ namespace ProductsCatalog.WebApi.Controllers
     {
         private ProductsCatalogEntities db = new ProductsCatalogEntities();
         // GET: Products
-        public IEnumerable<Product> Get()
+        public IEnumerable<Object> Get()
         {
             var products = db.Products.AsEnumerable();
-            return products.ToList();
+            var categories = db.Categories.AsEnumerable();
+            var images = db.Images.AsEnumerable();            
+            var prod = categories.Join(products, c => c.ID, p => p.CategoryID, (c, p) => new { p.ID, p.Name, p.ProdDescripion, p.Category, p.Model, p.Price, c.Category1, c.CatDescription }).Join(images, p => p.ID, img => img.ProductID, (p, img) => new { p.Name, p.ProdDescripion, p.Model, p.Price, p.Category1, p.CatDescription, img.ImageURL }).ToList();
+            return prod.ToList();
         }
     }
 }

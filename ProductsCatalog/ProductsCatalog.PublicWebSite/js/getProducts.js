@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     (function () {
-        // var content = "";
+        var content = "";
         ///*$.getJSON("js/products.json", function (data) {
 
         //     $.each(data, function (key, obj) {
@@ -23,7 +23,16 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
-                console.log(data);
+                $.each(data, function (key, obj) {
+                    console.log(obj.ImageURL);  
+                    content += '<figure class="productIMG"><a href="details.html?=' + obj.id + '"><img src=\"' + obj.ImageURL + '\"></a>';
+                    content += '<figcaption>' + obj.Name + '</figcaption><br/><p>' + obj.ProdDescripion + '</p></figure>';
+                    localStorage.setItem("ID", obj.ID);
+                    localStorage.setItem("Model", obj.Model);
+                });
+                
+                console.log(content);
+                $("#products").append(content);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
