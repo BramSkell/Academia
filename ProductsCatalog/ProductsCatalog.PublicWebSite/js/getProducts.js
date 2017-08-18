@@ -23,23 +23,28 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
+                var cont = 1;
                 $.each(data, function (key, obj) {
-                    console.log(obj.ImageURL);  
-                    content += '<figure class="productIMG"><a href="details.html?=' + obj.id + '"><img src=\"' + obj.ImageURL + '\"></a>';
+                    content += '<figure class="productIMG"><a class="imgDetails" href="details.html?=' + obj.ID + '"><img  src=\"' + obj.ImageURL + '\"></a>';
                     content += '<figcaption>' + obj.Name + '</figcaption><br/><p>' + obj.ProdDescripion + '</p></figure>';
-                    localStorage.setItem("ID", obj.ID);
-                    localStorage.setItem("Model", obj.Model);
+                    localStorage.setItem("ID" + cont, obj.ID);
+                    localStorage.setItem("Img" + cont, obj.ImageURL);
+                    localStorage.setItem("Name"+cont, obj.Name);
+                    localStorage.setItem("Model" + cont, obj.Model);
+                    localStorage.setItem("Price" + cont, obj.Price);
+                    localStorage.setItem("Desc" + cont, obj.ProdDescripion);
+
+                    cont++;
                 });
-                
-                console.log(content);
                 $("#products").append(content);
+               // console.log(content);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR);
                 console.log(textStatus);
                 console.log(errorThrown);
             }
-        });
+        });        
     })();
-
+    
 });

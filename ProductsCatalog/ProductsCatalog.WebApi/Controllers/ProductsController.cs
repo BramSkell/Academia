@@ -22,7 +22,7 @@ namespace ProductsCatalog.WebApi.Controllers
             var products = db.Products.AsEnumerable();
             var categories = db.Categories.AsEnumerable();
             var images = db.Images.AsEnumerable();            
-            var prod = categories.Join(products, c => c.ID, p => p.CategoryID, (c, p) => new { p.ID, p.Name, p.ProdDescripion, p.Category, p.Model, p.Price, c.Category1, c.CatDescription }).Join(images, p => p.ID, img => img.ProductID, (p, img) => new { p.Name, p.ProdDescripion, p.Model, p.Price, p.Category1, p.CatDescription, img.ImageURL }).ToList();
+            var prod = categories.Join(products, c => c.ID, p => p.CategoryID, (c, p) => new { p.ID, p.Name, p.ProdDescripion, p.Category, p.Model, p.Price, c.Category1, c.CatDescription }).Join(images, p => p.ID, img => img.ProductID, (p, img) => new { p.ID, p.Name, p.ProdDescripion, p.Model, p.Price, p.Category1, p.CatDescription, img.ImageURL }).ToList();
             return prod.ToList();
         }
     }
