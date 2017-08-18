@@ -35,6 +35,7 @@ $(document).ready(function () {
                     localStorage.setItem("Desc" + cont, obj.ProdDescripion);
 
                     cont++;
+                    localStorage.setItem("Ident",obj.ID);
                 });
                 $("#products").append(content);
                // console.log(content);

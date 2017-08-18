@@ -5,7 +5,7 @@ $(document).ready(function () {
         id.split("&").forEach(function (part) {
             var item = part.split("=");
             //console.log(item[1]);
-            // ShowDetails(item[1]);
+            // ShowDetails(item[1]);           
             var cont = 1;
             do {
                 if (localStorage.getItem("ID" + cont) == item[1]) {                    
@@ -16,7 +16,7 @@ $(document).ready(function () {
                     $("#description").append(desc);
                     break;                    
                 } else { cont++;}
-            } while (cont < 7);
+            } while (cont < localStorage.getItem("Ident")+1);
 
         });
        // console.log(localStorage);
